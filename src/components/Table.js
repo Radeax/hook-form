@@ -27,20 +27,16 @@ import Display from './Display';
 // }
 
 const Table = props => {
-    const [state, setState] = useState({
-        value: 'Default Value'
-    });
+    const [state, setState] = useState('');
 
     const onChangeHandler = e => {
-        setState({
-            value: e
-        })
+        setState(e)
     }
 
     return (
         <div>
-            <FormRow state={state.value} setState={onChangeHandler} />
-            <Display state={state.value} />
+            <FormRow state={state} setState={onChangeHandler} />
+            <Display state={state} />
         </div>
     );
 }
