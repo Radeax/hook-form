@@ -1,6 +1,7 @@
 import React, { useState, Component } from 'react';
 import FormRow from './FormRow';
 import Display from './Display';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // class Table extends Component {
 //     constructor(props) {
