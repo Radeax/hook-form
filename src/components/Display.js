@@ -5,8 +5,7 @@ import './App.css';
 const Display = (props) => {
     return (
         <div>
-            <p>OUTPUT</p>
-            <p>{props.state}</p>
+            <p>{props.name}: {props.state}</p>
         </div>
     );
 }

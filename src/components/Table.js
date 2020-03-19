@@ -27,16 +27,36 @@ import Display from './Display';
 // }
 
 const Table = props => {
-    const [state, setState] = useState('');
+    const [state, setState] = useState({
+        fname: '',
+        lname: '',
+        email: '',
+        pw: '',
+        pw2: ''
+    });
 
     const onChangeHandler = e => {
-        setState(e)
+        console.log(e);
+        setState({
+            ...state,
+            [e.name]: e.value
+        })
     }
 
     return (
         <div>
-            <FormRow state={state} setState={onChangeHandler} />
-            <Display state={state} />
+            <h1>Input</h1>
+            <FormRow label='First Name' name='fname' state={state.fname} setState={onChangeHandler} />
+            <FormRow label='Last Name' name='lname' state={state.lname} setState={onChangeHandler} />
+            <FormRow label='Email' name='email' state={state.email} setState={onChangeHandler} />
+            <FormRow label='Password' name='pw' state={state.pw} setState={onChangeHandler} />
+            <FormRow label='Confirm Password' name='pw2' state={state.pw2} setState={onChangeHandler} />
+            <h1>Your Form Data</h1>
+            <Display name='First Name' state={state.fname} />
+            <Display name='Last Name' state={state.lname} />
+            <Display name='Email' state={state.email} />
+            <Display name='Password' state={state.pw} />
+            <Display name='Confirm Password' state={state.pw2} />
         </div>
     );
 }

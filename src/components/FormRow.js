@@ -20,11 +20,14 @@ const FormRow = (props) => {
     const [state, setState] = useState('');
 
     const onChangeHandler = e => {
-        props.setState(e.target.value)
+        props.setState(e.target);
     }
 
     return (
-        <input value={props.state} onChange={onChangeHandler} />
+        <div>
+            <label htmlFor={props.name}>{props.label}: </label>
+            <input name={props.name} value={props.state} onChange={onChangeHandler} />
+        </div>
     );
 }
 
